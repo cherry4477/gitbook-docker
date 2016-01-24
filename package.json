@@ -1,0 +1,24 @@
+{
+    "name": "@com.github.cjnygard/gitbook",
+    "version": "0.0.1",
+    "description": "produce documentation file from Markdown source",
+    "license": "UNLICENSED",
+    "private": "true",
+    "author": {
+        "name": "Carl Nygard",
+        "email": "cjnygard@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cjnygard/gitbook.git"
+    },
+    "dependencies": {
+        "gitbook": ">=2.0.0"
+    },
+    "engines": {
+        "node": ">=5.5.0"
+    },
+    "config": {
+        "port": "3001"
+    }
+}
