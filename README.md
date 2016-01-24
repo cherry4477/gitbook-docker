@@ -22,7 +22,17 @@ To serve the web pages in the directories, add the "serve" option to the
 docker command line.  The image exports port 4000, which is the port on
 which the gitbook app serves the html:
 
-    docker run -it --rm --name gitbook-docs -v "$PWD":/usr/src/app gitbook serve
+    docker run -it --rm --name gitbook-docs -p 4000:4000 -v "$PWD":/usr/src/app gitbook serve
 
 If necessary, the /usr/src/app container directory can be changed via setting
 the DOCROOT environment variable.
+
+## Other Formats (PDF,mobi,etc)
+
+The calibre-ebook package is included in the container.  To generate a PDF
+of the documentation, use the following command:
+
+    docker run -it --rm --name gitbook-docs -v "$PWD":/usr/src/app gitbook pdf
+
+Other output formats provided by calibre-ebook can be invoked with similar
+command line options
