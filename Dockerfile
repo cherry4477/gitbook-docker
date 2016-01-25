@@ -14,11 +14,14 @@ RUN wget --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidg
 	python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
 
 RUN npm install gitbook-cli -g
-RUN gitbook init
 
 ENV DOCROOT /usr/src/app
-
+COPY book.json $DOCROOT/book.json
 WORKDIR $DOCROOT
+
+RUN gitbook install
+RUN gitbook init
+
 VOLUME ["$DOCROOT"]
 
 EXPOSE 4000
