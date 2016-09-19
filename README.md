@@ -35,4 +35,4 @@ of the documentation, use the following command:
     docker run -it --rm --name gitbook-docs -v "$PWD":/usr/src/app gitbook pdf
 
 Other output formats provided by calibre-ebook can be invoked with similar
-command line options
+command line 
